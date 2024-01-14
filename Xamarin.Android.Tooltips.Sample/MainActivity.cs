@@ -107,17 +107,16 @@ namespace Xamarin.Android.Tooltips.Sample
 					_toolTipsManager.FindAndDismiss(_textView);
 					builder = new ToolTip.Builder(this, _textView, _rootLayout, text, ToolTip.PositionLeftTo);
 					builder.SetBackgroundColor(ContextCompat.GetColor(this, Resource.Color.colorLightGreen));
-					builder.SetTextColor(ContextCompat.GetColor(this, Resource.Color.colorBlack));
+					builder.SetTextAppearance(Resource.Style.TooltipTextAppearance);
 					builder.SetGravity(ToolTip.GravityCenter);
-					builder.SetTextSize(12);
 					_toolTipsManager.Show(builder.Build());
 					break;
 				case Resource.Id.button_right_to:
 					_toolTipsManager.FindAndDismiss(_textView);
 					builder = new ToolTip.Builder(this, _textView, _rootLayout, text, ToolTip.PositionRightTo);
 					builder.SetBackgroundColor(ContextCompat.GetColor(this, Resource.Color.colorDarkRed));
-					builder.SetTextColor(ContextCompat.GetColor(this, Resource.Color.colorWhite));
-					_toolTipsManager.Show(builder.Build());
+                    builder.SetTextAppearance(Resource.Style.TooltipTextAppearance);
+                    _toolTipsManager.Show(builder.Build());
 					break;
 				case Resource.Id.button_align_center:
 					_align = ToolTip.AlignCenter;
